@@ -17,9 +17,14 @@ export default function HeroSection() {
             my clients get to enjoy the advantages of a time-tested and refined
             workflow that is custom-tailored to each project!
           </p>
-          <button className="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-full transition">
-            Download Resume
-          </button>
+          <a
+            href="https://drive.google.com/uc?export=download&id=1NbnbP6sIW2vM97QXuQv_r0i5fo5i8j3B"
+            download
+          >
+            <button className="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-full transition">
+              Download Resume
+            </button>
+          </a>
         </div>
 
         {/* Right Content */}

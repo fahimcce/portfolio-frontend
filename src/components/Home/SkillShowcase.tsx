@@ -4,16 +4,13 @@ import { motion } from "framer-motion";
 
 export default function SkillsShowcase() {
   const skillsLeft = [
-    "HTML",
-    "CSS",
     "JavaScript",
     "React",
+    "Redux",
     "Next.js",
-    "Zustand",
     "Tailwind CSS",
     "Framer Motion",
     "DOM",
-    "Unit Test",
     "Performance Optimize",
     "SSR",
   ];
@@ -22,18 +19,16 @@ export default function SkillsShowcase() {
     "Node",
     "Express",
     "REST API",
+    "MONGO DB",
     "SQL",
     "Postgres",
     "JWT/OAuth",
     "Prisma ORM",
-    "DB Modeling",
     "Stripe Payments",
-    "Bun",
-    "Zod Validation",
   ];
 
   return (
-    <section className="h-[80vh] py-16 px-8">
+    <section className=" py-16 px-8 bg-white">
       <div className="container mx-auto flex flex-col items-center">
         {/* Title */}
         <motion.div

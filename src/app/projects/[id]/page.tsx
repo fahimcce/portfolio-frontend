@@ -1,5 +1,6 @@
 "use client";
 
+import CardLoader from "@/components/shared/CardLoader";
 import { getAllProjects } from "@/services/ProjectServices";
 import { TProject } from "@/types";
 import { useParams } from "next/navigation";
@@ -33,9 +34,9 @@ export default function DetailsProject() {
     fetchData();
   }, [projectId]);
 
-  //   if (loading) {
-  //     return ;
-  //   }
+  if (loading) {
+    return <CardLoader />;
+  }
 
   if (!project) {
     return <p className="text-center text-red-500">Project not found.</p>;

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { getAllProjects } from "@/services/ProjectServices";
 import ProjectCard from "./projectCard";
 import { useRouter } from "next/navigation";
+import CardLoader from "../shared/CardLoader";
 
 export default function FetchForHome() {
   const [projects, setProjects] = useState<any[]>([]);
@@ -28,11 +29,7 @@ export default function FetchForHome() {
   }, []);
 
   if (loading) {
-    return (
-      <p className="text-center text-gray-500 animate-pulse">
-        Loading projects...
-      </p>
-    );
+    return <CardLoader />;
   }
 
   if (error) {
@@ -40,22 +37,23 @@ export default function FetchForHome() {
   }
 
   return (
-    <section className="bg-gray-800 py-16 px-8 min-h-screen">
+    <section className="bg-gray-800 px-8 min-h-screen">
       <div className="container mx-auto">
         {/* Section Header */}
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-4xl font-bold text-center mb-12 flex justify-center items-center relative w-full"
+          className="text-2xl font-bold text-center mb-12 flex justify-center items-center relative w-full"
         >
           <span
             className="absolute inset-0 bg-white"
             style={{
-              clipPath: "polygon(20% 0, 80% 0, 90% 100%, 10% 100%)",
+              clipPath:
+                "polygon(0 50%, 100% 49%, 100% 49%, 79% 26%, 18% 27%, 0% 50%))",
             }}
           ></span>
-          <span className="relative z-10 text-gray-900">Projects Showcase</span>
+          <span className="relative z-10 text-gray-900">Projects</span>
         </motion.h1>
 
         {/* Project Grid */}

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { getAllProjects } from "@/services/ProjectServices";
 import ProjectCard from "./projectCard";
+import CardLoader from "../shared/CardLoader";
 
 export default function ProjectsFetch() {
   const [projects, setProjects] = useState<any[]>([]);
@@ -26,11 +27,7 @@ export default function ProjectsFetch() {
   }, []);
 
   if (loading) {
-    return (
-      <p className="text-center text-gray-500 animate-pulse">
-        Loading projects...
-      </p>
-    );
+    return <CardLoader />;
   }
 
   if (error) {
@@ -38,7 +35,7 @@ export default function ProjectsFetch() {
   }
 
   return (
-    <section className="bg-gray-800 py-16 px-8 min-h-screen">
+    <section className="bg-gray-800 px-8 min-h-screen">
       <div className="container mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
